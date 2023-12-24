@@ -1,0 +1,43 @@
+$primarycolor:#091637;
+
+.login_page{
+    padding: 50px 0;
+    position: absolute;
+    z-index: 9999999;
+    top: 0;
+    background: #fff;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    .row{
+        align-items: center;
+        .login_form{
+            max-width: 530px;
+            margin: 0 auto;
+            text-align: center;
+            .main_heading{
+                font-size: 42px;
+            }
+                .form_field{
+                    display: block;
+                }
+                .forgot_link{
+                    display: block;
+                    color:$primarycolor;
+                    text-decoration: none;
+                    text-align:right;
+                    margin: 0 auto 25px auto;
+                }
+                .signup_link{
+                    margin-top: 70px;
+                    a{
+                        color: $primarycolor;
+                        font-weight: 700;
+                        text-decoration: none;
+                        margin-left: 5px;
+                    }
+                }
+            }
+    }
+   
+}

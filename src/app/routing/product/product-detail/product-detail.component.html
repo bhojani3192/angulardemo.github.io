@@ -1,0 +1,16 @@
+<h3>product-detail works!</h3>  
+<p>product : {{product.name}}</p>
+<p>price : {{ product.price}}</p>
+<!-- <p><a class="btn-primary btn" (click)="onBack()"> Back </a></p> -->
+
+<ul class="nav navbar-nav">
+    <li>
+        <a [routerLink]="['overview']" class="mx-2">overview</a>
+        <a [routerLink]="['spec']">Specification</a>
+    </li>
+</ul>
+
+
+
+<p><a class="btn-primary btn mt-5" (click)="onBack()"> Back to product List</a></p>
+

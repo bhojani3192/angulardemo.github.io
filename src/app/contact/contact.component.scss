@@ -1,0 +1,102 @@
+// @import url('../../styles.scss');
+
+$extralightblue:#EDF5FF;
+$font-quicksand:'Quicksand';
+$font-hotwood:'Holtwood One SC';
+$primarycolor:#091637;
+$success-color:#054F19;
+
+
+.contact {
+  .contact_img{
+    img {
+      height: 100% !important;
+      object-fit: cover;
+      border-radius: 10px;
+  }
+  
+}
+  .booking_option {
+    text-align: center;
+    .form_field_row {
+      display: flex;
+      gap: 15px;
+      .contact_field {
+        width: 100%;
+        .form_field {
+          width: 100%;
+        }
+      }
+      .contact_number{
+        display: flex;
+        gap:10px;
+        .country_code {
+            max-width: 60px;
+        }
+    }
+      .error_msg,
+      .invalid_form {
+        text-align: left;
+        margin-bottom: 20px;
+        color: #f44336;
+      }
+
+      .invalid_form {
+        text-align: center;
+        margin-top: 20px;
+      }
+    }
+    .message_field{
+        width: 100%;
+      }
+      .message_success{
+        max-width: 285px;
+        margin: 40px auto 0 auto;
+      }
+      .ng-invalid {
+        .blue_btn {
+          background-color:$primarycolor;
+          border: $primarycolor;
+        }
+      }
+  }
+
+.contact_detail_wrap{
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-between;
+  ul{
+    padding: 0;
+    margin-bottom: 0;
+    li{
+      text-align: left;
+      list-style: none;
+      margin-bottom: 15px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+      a{
+        color:#000;
+        text-decoration: none;
+        margin-left: 24px;
+        &:hover{
+          color: #091637;
+        }
+      }
+    }
+  }
+  .social{
+    ul{
+      display: flex;
+      gap:20px;
+      li{
+        text-align: center;
+        a{
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
+}

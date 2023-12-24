@@ -1,0 +1,31 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Service Demo</h1>
+            <button (click)="getProducts()">Get Product</button>    
+            
+
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <tr *ngFor="let product of products">
+                            <td>{{product.productId}}</td>
+                            <td>{{product.name}}</td>
+                            <td>{{product.price}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <a [routerLink]="'../injection'">Injection</a>
+        </div>
+    </div>
+</div>

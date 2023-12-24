@@ -1,0 +1,40 @@
+<p>repo-list works!</p>
+
+
+<h1>http</h1>
+<div class="form-group">
+    <label for="username">
+        Github username
+    </label>
+    <input type="text" class="form-control" name="userName" [(ngModel)]="userName"> 
+    <p>
+        <button type="button" (click)="getRepos()">Get Repos</button>
+    </p>
+</div>
+
+<div *ngIf="loading">*****loading*****</div>
+
+<div *ngIf="errorMessage" class="alert alert-warning">
+ <b>Warning!</b>  {{errorMessage}}
+</div>
+
+<div class="table-rsponsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>HTML Url</th>
+                <th>description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let repo of repos">
+            <td>{{repo.id}}</td>
+            <td>{{repo.name}}</td>
+            <td>{{repo.html_url}}</td>
+            <td>{{repo.description}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

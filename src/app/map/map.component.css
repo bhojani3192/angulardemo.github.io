@@ -1,0 +1,35 @@
+.map iframe {
+  height: 80vh;
+}
+
+.map .map_location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 75px;
+  max-width: 80%;
+}
+
+.map .map_location a {
+  background-color: rgba(134, 157, 169, 0.5);
+  width: 200px;
+  height: 100px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  line-height: 100px;
+  text-decoration: none;
+}
+
+.map .map_location a:hover {
+  background-color: rgba(13, 59, 84, 0.5);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/*# sourceMappingURL=map.component.css.map */

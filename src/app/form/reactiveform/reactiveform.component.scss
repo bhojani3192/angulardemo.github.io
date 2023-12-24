@@ -1,0 +1,34 @@
+.employee_box{
+    border: 1px solid blue; 
+    padding: 10px; 
+    // width: 600px;
+    margin: 5px
+}
+.teacher_wrap{
+    border: 1px solid blue; 
+    padding: 10px;
+    width: 100%;
+    display: inline-block; 
+    margin: 5px;
+
+    .batches{
+        display: flex;
+        .batches_wrap{
+            border: 1px solid red;
+            padding: 10px;
+            margin: 5px;
+        
+            .student_wrap{
+                border: 1px solid blue; 
+                padding: 2px;
+            }
+        }
+    }   
+ 
+}
+
+.error{
+    div{
+        color: red;
+    }
+}

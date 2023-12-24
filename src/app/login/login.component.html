@@ -1,0 +1,41 @@
+<section class="login_page custom_form_field page_padding"> 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <img src="../../assets/images/login.png" alt="" class="img-fluid"> 
+            </div>
+            <div class="col-md-7">
+                <div class="login_form">
+                    <h3 class="main_heading">Login to Travel World</h3>
+                    <form action=""  [formGroup]="loginForm" (ngSubmit)="onFormSubmit(loginForm)">
+                        <mat-form-field class="form_field">
+                            <input matInput placeholder="Email" value="" formControlName="username" name="username" >
+                        </mat-form-field> 
+                        <div *ngIf="!loginForm.controls.username?.valid && (loginForm.controls.username.dirty||loginForm.controls.username?.touched)" class="error_msg">
+                            Please Enter valid email id
+                        </div>
+                                
+                        <mat-form-field class="form_field">
+                            <input matInput placeholder="Password" value="" formControlName="password" name="password">
+                        </mat-form-field> 
+                        <div *ngIf="!loginForm.controls.password?.valid && (loginForm.controls.password.dirty||loginForm.controls.password?.touched)" class="error_msg">
+                            Please Enter atleast 8 char password
+                        </div>
+
+                        <a [routerLink]="['../register']"  class="forgot_link">Forgot password?</a>
+
+                        <button type="submit" [routerLink]="['../']"  [disabled]="!loginForm.valid"  (click)="getloginmsgs()" (click)="onFormSubmit(loginForm)"  class="btn btn-primary blue_btn" >Login</button>
+
+                        <div class="success_msg" *ngFor="let loginmsg of loginmsgs">
+                            <p>{{loginmsg.loginmsg}}</p>
+                        </div>
+                    </form>
+                    <div class="signup_link">
+                        <span>Don't have an Account?</span>
+                        <a [routerLink]="['../register']">Sign Up</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  

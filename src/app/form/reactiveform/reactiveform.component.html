@@ -1,0 +1,331 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>Reactive Form !</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+  
+      <p>
+        <label for="firstname">First Name </label>
+        <input type="text" id="firstname" name="firstname" formControlName="firstname" novalidate>
+      </p>
+
+      <div *ngIf="!firstname?.valid && (firstname.dirty || firstname.touched)" class="error">
+          <div [hidden]="!firstname.error.required">
+              First Name Required
+          </div>
+          <div [hidden]="!firstname.error.minlenghth">
+              min-lenght 10
+          </div>
+      </div>
+    
+      <p>
+        <label for="lastname">Last Name </label>
+        <input type="text" id="lastname" name="lastname" formControlName="lastname">
+      </p>
+    
+      <div *ngIf="!lastname.valid && (lastname.dirty ||lastname.touched)" class="error">
+          <div [hidden]="!lastname.errors.pattern">
+            Only characters are allowed
+          </div>
+          <div [hidden]="!lastname.errors.maxLength">
+            Max length allowed is {{lastname.errors.maxlength?.requiredLength}} 
+          </div>
+          <div [hidden]="!lastname.errors.required">
+            Last Name is required
+          </div>
+        </div>
+      <p>
+        <label for="email">Email </label>
+        <input type="text" id="email" name="email" formControlName="email">
+      </p>
+    
+      <div *ngIf="!email.valid && (email.dirty ||email.touched)" class="error">
+          <div [hidden]="!email.errors.required">
+            email is required
+          </div>
+          <div [hidden]="!email.errors.email">
+            invalid email id
+          </div>
+        </div>
+      <p>
+        <label for="gender">Geneder </label>
+        <input type="radio" value="male" id="gender" name="gender" formControlName="gender"> Male
+        <input type="radio" value="female" id="gender" name="gender" formControlName="gender"> Female
+      </p>
+    
+      <div *ngIf="!gender.valid && (gender.dirty ||gender.touched)" class="error">
+          <div [hidden]="!gender.errors.required">
+            gender is required
+          </div>
+        </div>
+      <p>
+        <label for="isMarried">Married </label>
+        <input type="checkbox" id="isMarried" name="isMarried" formControlName="isMarried">
+      </p>
+      <div *ngIf="!isMarried.valid && (isMarried.dirty ||isMarried.touched)" class="error"> 
+          <div [hidden]="!isMarried.errors.required">
+            isMarried is required
+          </div>
+        </div>
+      
+    
+      <p>
+        <label for="country">country </label>
+        <select id="country" name="country" formControlName="country">
+          <option value="1">India</option>
+          <option value="2">USA</option>
+          <option value="3">England</option>
+          <option value="4">Australia</option>
+        </select>
+      </p>
+      <div *ngIf="!country.valid && (country.dirty ||country.touched)" class="error" >
+          <div [hidden]="!country.errors.required">
+            country is required
+          </div>
+        </div>
+
+
+        <div formGroupName="address">
+  
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" formControlName="city">
+          </div>
+          <div *ngIf="!city.valid && (city.dirty ||city.touched)" class="error">
+            <div [hidden]="!city.errors.required">
+              city is required
+            </div>
+          </div>
+      
+      
+          <div class="form-group">
+            <label for="street">Street</label>
+            <input type="text" class="form-control" name="street" formControlName="street">
+          </div>
+          <div *ngIf="!street.valid && (street.dirty ||street.touched)" class="error">
+            <div [hidden]="!street.errors.required">
+              street is required
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label for="pincode">Pin Code</label>
+            <input type="text" class="form-control" name="pincode" formControlName="pincode">
+          </div>
+          <div *ngIf="!pincode.valid && (pincode.dirty ||pincode.touched)" class="error">
+            <div [hidden]="!pincode.errors.required">
+              pincode is required
+            </div>
+          </div>
+      
+        </div> 
+        <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+        <p>
+        <button type="submit" (click)="setDefault()">Default</button>
+        </p>
+      <p>
+        <button type="submit" (click)="setValue()">setValue</button>
+        <button type="submit" (click)="setAddress()">setAddress</button>
+        <button type="submit" (click)="setCountry()">setCountry</button>
+        <button type="submit" (click)="setFirstname()">setFirstname</button>
+      </p>
+    
+      <p>
+          <button type="submit" (click)="patchName()">Name</button>
+          <button type="submit" (click)="patchAddress()">Address</button>
+          <button type="submit" (click)="reset()">Reset</button>
+      </p>
+
+      <p>
+        <button (click)="onlySelf()">onlyself</button>
+        <button (click)="withOutOnlySelf()">withoutonlyself</button>
+        <button (click)="withoutEmit()">withoutEmit</button>
+        <button (click)="emit()">Emit</button>
+      </p>
+      <pre>
+          {{contactForm.value | json}}
+      </pre>
+      <b>disabled : </b>{{contactForm.disabled}}
+      <b>enabled : </b>{{contactForm.enabled}}
+
+    </form>
+
+    <form action="" [formGroup]="validForm">
+      Notify:
+      <select name="" id="" formControlName="notifyVia"> 
+        <option value="" *ngFor="let item of notifyOptions"  [ngValue]="item">{{item}}</option>  
+      </select>
+  
+      <p>
+        email:
+        <input type="text" formControlName="email">
+      </p>
+
+      <p>
+        mobile:
+        <input type="text" formControlName="mobile">
+      </p>
+
+      <button type="submit">button</button>
+    </form>
+
+    <p>formvalid: {{validForm.valid}}</p>
+    <p>emailValid: {{validForm.controls["email"].valid}}</p>
+    <p>mobileValid: {{validForm.controls["mobile"].valid}}</p>
+
+    </div>
+    <div class="col-md-6">
+      <h1>Form Array</h1>
+      <form action=""  [formGroup]="skillForm"     (ngSubmit)="onsubmitSkill()">
+        <p>
+          <label for="">Name</label>
+          <input type="text" formControlName="name">
+        </p>
+
+        <p>Skills: {{this.skillForm.value |json}}</p> 
+
+
+        <div formArrayName="skills">
+            <div *ngFor="let skill of skills.controls; let i = index">
+              <div [formGroupName]="i">
+                skill:
+                <input type="text" formControlName="skill">
+                exp:
+                <input type="text" formControlName="exp">
+              </div>
+              <button (click)="removeSkill(i)">Remove skill</button>
+            </div>
+        </div>
+        <p>
+          <button (click)="addSkills()">Add skill</button>
+        </p>
+    
+        <p>
+          <button (click)="onsubmitSkill()">submit </button>
+        </p>
+      </form>
+
+    
+
+
+      <!-- employe form -->
+      <h1>Employe Form</h1>
+
+      <form action="" [formGroup]="empForm" (ngSubmit)="onsubmitEmployee()">
+          <div formArrayName="employees">
+            <div *ngFor="let  employee of employess().controls; let empIndex=index">
+              <div [formGroupName]="empIndex" class="employee_box">
+                  {{empIndex}} First Name 
+                  <input type="text" formControlName="firstName">
+                  Last Name
+                  <input type="text" formControlName="lastName">
+
+                  <button (click)="removeEmployee(empIndex)">removeEmployee</button>
+
+                  <div formArrayName="skills">
+                    <div *ngFor="let skill of employeeSkills(empIndex).controls; let skillIndex=index">
+                        <div [formGroupName]="skillIndex">
+                          {{skillIndex}} skill:
+                          <input type="text" formControlName="skill">
+                          exp:
+                          <input type="text" formControlName="exp">
+
+                          <button (click)="removeEmployeSkills(empIndex,skillIndex)">remove</button>
+                        </div>
+                    </div>
+                  </div>
+                    <button (click)="addEmployeSkills(empIndex)">addemployeeskill</button>
+
+              </div> 
+            </div>
+
+            <button type="button" (click)="addEmployee()">Add Employee</button>
+          </div>
+          <button type="submit">submit</button>
+      </form>
+    <pre>{{this.empForm.value | json}}</pre>
+
+
+    <!-- teacherForm -->
+    <h1>Teacher Form</h1>
+    <form action="" [formGroup]="teacherForm" (ngSubmit)="onsubmitTeacher()" >
+      <div formArrayName="teachers">
+        <div *ngFor="let teacher of teachers().controls; let ti=index ">
+            <div [formGroupName]="ti" class="teacher_wrap"> 
+                Teachers Name:
+                <input type="text" formControlName="name"> 
+                <button (click)="removeTeacher(ti)">Remove</button>
+                <button (click)="addBatch(ti)">Add Batch</button>
+                <div formArrayName="batches" class="batches">
+                  <div *ngFor="let batch of batches(ti).controls; let bi=index">
+                      <div [formGroupName]="bi" class="batches_wrap">
+                        Batchs name:
+                        <input type="text" formControlName="name">
+                        <button (click)="removeBatch(ti,bi)">remove</button>
+                        <button (click)="addStudent(ti,bi)">Add Student</button>
+                        <div formArrayName="students">
+                          <div *ngFor=" let studet of students(ti,bi).controls; let si=index">
+                            <div [formGroupName]="si" class="student_wrap">
+                              student Name:
+                              <input type="text" formControlName="name">
+                              <button (click)="removeStudent(ti,bi,si)">remove</button>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p>
+      <button (click)="addTeacher()">Add Teacher</button>
+    </p>
+
+    <p>
+      <button (click)="patchValue1()">Patch value1</button>
+      <button (click)="patchValue2()">patchValue2</button>
+    </p>
+
+  
+    <p>
+      <button (click)="clearFormArray()">clear</button>
+    </p>
+
+    <p>
+      <button type="submit">Submit</button>
+    </p>
+
+
+    <pre>
+      {{this.teacherForm.value | json}}
+    </pre>
+    </form>
+
+    <h1>country Form</h1>
+    <form action="" [formGroup]="countryForm" (submit)="countrySubmit()">
+      <p>
+        <select formControlName="country">
+          <option [ngValue]="null">selected country</option>
+          <option  *ngFor="let country of countries" [ngValue]="country.id">{{country.name}}</option>
+        </select>
+
+        <input type="text" [(ngModel)]="country_name" [ngModelOptions]="{standalone: true}">
+        <button (click)="addCountry()">Add</button>
+
+        <input  [(ngModel)]="set_country" [ngModelOptions]="{standalone: true}">
+        <button (click)="setCountrie()">setcountry</button>
+
+        <button type="submit">submit</button>
+      </p>
+    </form>
+    <pre>
+      {{this.countryForm.value | json}}
+    </pre>
+       
+    <app-customvalid></app-customvalid>
+
+    </div>
+  </div>
+</div>

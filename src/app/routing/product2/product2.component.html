@@ -1,0 +1,19 @@
+<p>product2 works!</p>
+<div class="table-responsive">
+    <table class="table">
+     <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let product of products">
+            <td><a  [routerLink]="['/product2', product.productid]">{{product.name}}</a>
+            </td>
+            <td>{{product.price}}</td>
+        </tr>
+     </tbody>   
+
+    </table>
+</div>

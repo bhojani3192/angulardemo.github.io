@@ -1,0 +1,26 @@
+$primarycolor:#091637;
+$white:#fff;
+$lightblue:#C8EBFF;
+
+.header_bg{
+  position: relative;
+  background-color: $primarycolor !important; 
+  svg{
+    color:$lightblue;
+  }
+  .nav-link{
+        color:$lightblue;
+  }
+  .active {
+    color: #fff !important;
+    img{
+   
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7459%) hue-rotate(142deg) brightness(112%) contrast(92%);
+    
+    }
+}
+}
+
+.logout{
+  cursor: pointer;
+}

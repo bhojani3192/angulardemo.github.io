@@ -1,0 +1,22 @@
+<p>routing works!</p>
+<h1>Products !</h1>
+
+<p><a [routerLink]="'../product'">products</a></p>
+<p><a [routerLink]="'../product1'">product1</a></p>
+<p><a [routerLink]="'../product2'">product2</a></p>
+
+<p><a [routerLink]="'../static'">static</a></p>
+<p><a [routerLink]="'../dynamic'" [state]="product">dynamic</a></p>
+
+<p>
+    Id:
+    <input type="text" [(ngModel)]="product.id">
+</p>
+<p>
+    Name:
+    <input type="text" [(ngModel)]="product.name">
+</p>
+
+<button (click)="gotoDynamic()">Go to dynamic</button>
+
+<app-activatedroute></app-activatedroute>

@@ -1,0 +1,124 @@
+<div class="contact page_padding custom_form_field">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 contact_img">
+                <img src="../../assets/images/contact.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <div class="booking_option">
+                    <h3 class="main_heading">{{title}}</h3>
+                    <div class="contact-form">
+                        <form action="" class="contact-form" [formGroup]="contactForm"  (ngSubmit)="onSubmit()">
+                            <div [ngClass]="cssVar">
+                                <div  [ngClass]="cssArray">
+                                    <mat-form-field class="form_field">
+                                        <input  matInput id="firstname" name="firstname"  placeholder="firstname" formControlName="firstname">
+                                    </mat-form-field>
+                                    <!-- <input type="text" id="firstname" name="firstname" formControlName="firstname"> -->
+                                    <div  *ngIf="!contactForm.controls.firstname?.valid && (contactForm.controls.firstname.dirty||contactForm.controls.firstname?.touched)"
+                                        class="error_msg">
+                                        Please Enter valid First Name
+                                    </div>
+                                </div>
+                                <div class="last_name contact_field">
+                                    <mat-form-field class="form_field">
+                                        <input matInput placeholder="lastname" value="" formControlName="lastname">
+                                    </mat-form-field>
+                                    <div *ngIf="!contactForm.controls.lastname?.valid && (contactForm.controls.lastname.dirty||contactForm.controls.lastname?.touched)"
+                                        class="error_msg">
+                                        Please Enter valid Last Name
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form_field_row">
+                                <div class="contact_field">
+                                    <mat-form-field class="form_field"> 
+                                        <input matInput placeholder="email" value="" formControlName="email" >
+                                    </mat-form-field>
+                                    <div  *ngIf="!contactForm.controls.email?.valid && (contactForm.controls.email.dirty||contactForm.controls.email?.touched)"
+                                        class="error_msg" >
+                                        Please Enter valid email id
+                                    </div>
+                                </div>
+                                <div class="contact_number_field">
+                                    <div   [ngClass]="['contact_number', 'contact_field']">
+                                      <div class="country_code_field">
+                                        <mat-form-field class="country_code" >
+                                            <mat-select formControlName="countrycode" name="country1">
+                                              <mat-option    *ngFor="let countrycode of countrycodes" [value]="countrycode.value" >
+                                                {{countrycode.viewValue}}
+                                              </mat-option>
+                                            </mat-select>
+                                          </mat-form-field>
+                                      </div>
+                                        <mat-form-field class="form_field">
+                                            <input matInput placeholder="phone number" value="" formControlName="phonenumber">
+                                        </mat-form-field>
+                                    </div>
+                                    <div *ngIf="!contactForm.controls.countrycode
+                                    .valid && (contactForm.controls.countrycode.dirty||contactForm.controls.countrycode?.touched)"
+                                  class="error_msg">
+                                  Please Enter Country Code
+                                  </div>
+                                    <div *ngIf="!contactForm.controls.phonenumber?.valid && (contactForm.controls.phonenumber.dirty||contactForm.controls.phonenumber?.touched)"
+                                    class="error_msg">
+                                    Please Enter valid Number
+                                </div>
+                                </div>
+                            </div>
+                             <mat-form-field class="message_field">
+                                  <mat-label>Your Message</mat-label>
+                                  <input matInput #message maxlength="256" placeholder="Type Your Message" formControlName="message">
+                            </mat-form-field>
+                        
+                            <button type="submit" [disabled]="!contactForm.valid" (click)="getcntmsgs()"
+                            class="btn btn-primary blue_btn">Send</button>
+                            <div *ngFor="let cntmsg of cntmsgs" class="message_success">
+                                <p>{{cntmsg.successmsg }}</p>
+                            </div>
+
+                           <div class="contact_detail_wrap">
+                            <div class="contact_info">
+                                <ul *ngFor="let contactinfo of contactinfos;">
+                                    <li>
+                                        <img src="../../assets/images/email.svg" alt="">
+                                        <a href="mailto:travelworld@gmail.com">{{contactinfo.emailid}}</a>
+                                    </li>
+                                    <li>
+                                        <img src="../../assets/images/call.svg" alt="">
+                                        <a href="">{{contactinfo.contactNo}}</a>
+                                    </li>
+                                    <li>
+                                        <img src="../../assets/images/location-on.svg" alt="">
+                                        <a href="">{{contactinfo.address}}</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="social">
+                                <ul>
+                                    <li>
+                                        <a href="">
+                                            <img src="../../assets/images/facebook-1.svg" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <img src="../../assets/images/instagram-11.png" alt="">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            <img src="../../assets/images/twitter (2).png" alt="">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                           </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<p>activatedroute works!</p>
+<ol>
+    <li>
+        <a [routerLink]="['../product']" [queryParams]="{sort:sort}">Product</a> 
+        <input type="" [(ngModel)]="sort">
+
+    </li>
+    <li>
+        <a [routerLink]="['../product']" [fragment]="fragment" >Product</a> 
+        <input type="" [(ngModel)]="fragment">
+
+    </li>
+    <li><a [routerLink]="['/']">Home</a></li>
+
+
+</ol>
+
+<p>
+    root:
+    {{this.activatedRoute.root}}
+</p>
+<p>
+    parent:
+    {{this.activatedRoute.parent}}
+</p>
+<p>
+    pathFromRoot:
+    {{this.activatedRoute.pathFromRoot}}
+</p>
+<p>
+    firstChild:
+    {{this.activatedRoute.firstChild}}
+</p>
+<p>
+    children:
+    {{this.activatedRoute.children}}
+</p>

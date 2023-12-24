@@ -1,0 +1,13 @@
+.header_bg {
+  position: relative;
+  background-color: #091637 !important;
+}
+
+.header_bg svg {
+  color: #C8EBFF;
+}
+
+.header_bg .nav-link {
+  color: #C8EBFF;
+}
+/*# sourceMappingURL=header.component.css.map */

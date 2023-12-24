@@ -1,0 +1,264 @@
+$primarycolor:#091637;
+$white:#fff;
+$extralightblue:#EDF5FF;
+$font-quicksand:'Quicksand';
+$font-hotwood:'Holtwood One SC';
+
+.booking_page{
+  margin: 20px 0;
+}
+
+.booking_option{
+  padding: 30px;
+  background-color: $extralightblue;
+  margin: 30px;
+  border-radius: 10px;
+  h5{
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .booking_option_field{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid #000;
+    padding: 10px 15px 10px 15px;
+    border-radius: 100px;
+    .radio_label{
+      font-size: 20px;
+      color:$primarycolor;
+      font-family: $font-quicksand;
+      font-weight: 600;
+    }
+    h4{
+      margin-bottom: 0;
+      color: $primarycolor;
+      font-family:$font-hotwood;
+      font-size: 20px;
+  }
+  }
+}
+
+.people{
+  // padding: 20px 40px;
+  margin-top: 30px;
+  background-color: #E7F4FE;
+  .blue_btn{
+    padding: 5px 10px;
+    width: 100px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  // .counter{
+  //   margin-top: 30px;
+  // }
+
+  .people_number{
+    gap:15px;
+    margin-top: 20px;
+    border: 0;
+    .number_selct{
+      width:36px;
+      height:36px;
+      border-radius: 100%;
+      background-color: #AAC8D9;
+      color:$white
+    }
+    .active{
+      background-color: $primarycolor
+    }
+  }
+  .number_selct.mat-button-toggle-checked {
+    background-color:$primarycolor  !important;
+  }
+}
+
+.payment{
+//  padding: 35px 40px;   
+ .payment_option{
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  .blue_btn{
+    border: 2px solid #091637;
+    &:hover{
+      background-color: transparent;
+      border: 2px solid #091637;
+    }
+  }
+  .promocode_msg{
+    margin-top: 10px;
+    color: green;
+    width: 82%;
+    text-align: left;
+  }
+  .checkbox-label{
+    white-space: pre-line ;
+  }
+.payment_check{
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+  .promocode{
+    display: flex;
+    align-items: center;
+    position: relative;
+    input{
+      width:100%;
+      display: unset !important;
+      margin-top: 15px;
+      padding: 10px 15px;
+    }
+    .apply_link{
+      text-decoration: none;
+      color:#0D3B54;
+      font-weight: 600;
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top:25px;
+      background-color: transparent ;
+      border:0;
+    }
+    .clear{
+      right: 70px;
+    }
+  }
+ .price_total{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 30px;
+ }
+
+ .price{
+  margin-left: auto;
+  text-align: right;
+    .price_disc{
+      margin-bottom: 0;
+      margin-top: 10px;
+    }
+    .final_price{
+      margin-top: 10px;
+    }
+    .discount{
+      color: #034B0A;
+      font-family: $font-quicksand;
+      font-weight: 500;
+    }
+    span{
+      text-align: right;
+      color: #C2C2C2;
+      font-size: 16px;
+      font-family: $font-hotwood;
+      font-weight: 400;
+      margin-bottom: 10px; 
+    }
+    .totalamt{
+      margin-top: 30px;
+      display: block;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #D9D9D9;
+        bottom: 35px;
+        left: 0;
+      }
+    }
+    .disct{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      span{
+        margin: 0 !important;
+      }
+    }
+ 
+  }
+
+
+.blue_btn{
+  transform: translateX(60%);
+}
+  }
+ 
+}
+
+.date_time{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  .time{
+    background-color: #fff;
+    width:300px;
+    height: 100px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 12px 0;
+    input[type="time"]::-webkit-calendar-picker-indicator{
+    display: none;
+    }
+    h5{
+      text-align: center;
+    }
+    input{
+      border-radius: 100px;
+      background-color: #0D3B54;
+      color: $white;
+      padding: 8px 20px;
+    }
+  }
+}
+.booking_shedual{
+  min-height: 485px;
+}
+.booking_location{
+  margin:30px;
+  .heading{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    a{
+      color: #091637;
+      text-decoration: none;
+      margin-left: 10px;
+      font-weight: 700;
+    }
+    p{
+      margin-bottom: 0;
+    }
+  }
+  h3{
+    font-family: $font-quicksand;
+    font-size: 42px;
+    font-weight: 600;
+    color: $primarycolor;
+  }
+  .booking_option{
+    margin: 0;
+  }
+}
+
+.clear{
+    background: transparent !important;
+    border: 0;
+}
+.primary{
+  color: red;
+}
+
+.tooltip {
+  border-bottom: 1px dotted black; 
+  position: absolute;
+  top: unset !important;
+  bottom: 0px !important;
+  right: 0 !important;
+  width: 100px;
+  opacity: 1;
+}

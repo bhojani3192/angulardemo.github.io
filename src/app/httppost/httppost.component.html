@@ -1,0 +1,36 @@
+<p>httppost works!</p>
+<div>
+    <div>
+        <label for="">name</label>
+        <input type="text"  [(ngModel)]="person.name">
+    </div>
+    <div>
+        <button (click)="addPerson()">Add</button>
+        <button (click)="getPeopleWithHeader()">getPeopleHeader</button>
+        <button (click)="getPeoplwithSet()">getPeopleSet</button>
+        <button (click)="getPeopleImmutable()">getPeopleImmutable</button>
+        <button (click)="getPeopleImmutable1()">getPeopleImmutable1</button>
+        <button (click)="getPeopleAppend()">getPeopleAppend</button>
+        <button (click)="getPeopleHas()">getPeopleAppend</button>
+        <button (click)="getPeopleGet()">getPeopleGet</button>
+        <button (click)="getPeopleGetAll()">getPeopleGetAll</button>
+        <button (click)="getPeopleDelete()">getPeopleDelete</button>
+        <button (click)="getPeopleObject()">getPeopleObject</button>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>  
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of people;">
+            <td>{{person.id}}</td>
+            <td>{{person.name}}</td>
+        </tr>
+    </tbody>
+</table>

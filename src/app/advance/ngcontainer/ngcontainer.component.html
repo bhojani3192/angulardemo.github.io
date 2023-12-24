@@ -1,0 +1,43 @@
+<h3>ngcontainer works!</h3>
+<p>Hey!!</p>
+<ng-container>
+    ng container content!
+</ng-container>
+
+<!-- <ul>
+    <span *ngFor="let item of items">
+        <li *ngIf="item.active">
+            {{item.name}}
+        </li>
+    </span>
+</ul> -->
+
+<ul>
+    <ng-container *ngFor="let item of items">
+        <li *ngIf="item.active">
+            {{item.name}}
+        </li>
+    </ng-container>
+</ul>
+
+<!-- <div *ngIf="items1">
+    <div *ngFor="let item of items1">
+        {{item.name}}
+    </div>
+</div> -->
+
+    <ng-container *ngIf="items1">
+        <div *ngFor="let item of items1">
+            {{item.name}}
+        </div>
+    </ng-container>
+<!-- <div [ngSwitch]="value" class="ngSwitch">
+    <span *ngSwitch="0">TextOne</span>
+    <span *ngSwitch="1">Texttwo</span>
+</div> -->
+<div [ngSwitch]="value" class="ngSwitch">
+    <ng-container *ngSwitch="0">TextOne</ng-container>
+    <ng-container *ngSwitch="1">Texttwo</ng-container>
+</div>
+
+<ng-container *ngTemplateOutlet="loading"></ng-container>

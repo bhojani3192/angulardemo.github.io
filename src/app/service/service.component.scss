@@ -1,0 +1,22 @@
+$primarycolor:#091637;
+$white:#fff;
+$font-quicksand:'Quicksand';
+// heading
+$heading-font-size:48px;
+$heading-font-weight:600;
+@mixin heading {
+    color:$primarycolor;
+    font-size: $heading-font-size;
+    font-family: $font-quicksand;
+    font-weight: $heading-font-weight;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.service_page{
+    .row{
+        gap:24px 0;
+    }
+}
+.main_heading{
+    @include heading;
+ }

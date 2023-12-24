@@ -1,0 +1,56 @@
+<p>product works!</p>
+
+<h2>{{title}}</h2>
+<ul>
+<li>
+    <a [routerLink]="['../home']">home</a>
+    <div class="navbar-form navbar-left">
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Page No" [(ngModel)]="pageNum">
+        </div>
+    </div>
+</li>
+<li  class="nav">
+    <a  [routerLink]="['../product']" [queryParams]="{pageNum:pageNum}">Product</a>
+</li>
+
+
+<li>
+    <a [routerLink]="['../contact']" queryParamsHandling="preserve">Contact</a>
+</li>
+</ul>
+
+<p>Cureent Page No {{pageNo}}</p>
+<p>snapshot Page No {{snapshotPageNo}}</p>
+<button (click)="nextPage()">Next Page</button>
+
+<table class="table">
+    <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products;">
+            <td>{{product.productid}}</td>
+            <td><a [routerLink]="['detail',product.productid]">{{product.name}} </a> </td>
+            <!-- <td><a [routerLink]="[{outlets:{prddetail:['detail', product.productid]}}]">{{product.name}} </a> </td> -->
+            <td>{{product.price}}</td>
+            <td><a [routerLink]="['/product/view', product.productid]">View</a> </td>
+            <td><a [routerLink]="['/product/edit', product.productid]">Edit</a> </td>
+        </tr>
+    </tbody>
+
+
+</table>
+
+<p>
+    sort:
+{{sort}} 
+
+</p>
+
+
+
+<router-outlet></router-outlet>
+

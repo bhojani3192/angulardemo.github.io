@@ -1,0 +1,12 @@
+.footer_wrap {
+  text-align: center;
+  background-color: #091637;
+  color: #C8EBFF;
+  padding: 26px 0;
+  font-size: 16px;
+}
+
+.footer_wrap p {
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=footer.component.css.map */

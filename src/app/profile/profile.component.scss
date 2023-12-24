@@ -1,0 +1,59 @@
+$primarycolor:#091637;
+.profile{
+    .booking_option{
+        margin:50px auto ; 
+        max-width: 790px;  
+        text-align: center;
+        h3{
+            font-size: 42px;
+        }
+        .profile_name{
+            margin-top: 20px;
+        }
+        .profile-detial{
+            margin-top: 40px;
+            .last {
+                    span{
+                        color:$primarycolor !important;
+                    }
+            }
+            ul{
+                padding: 0;
+                width: 500px;
+                margin: 0 auto;
+                li{
+                    list-style: none;
+                    display: flex;  
+                    margin-bottom: 20px;
+                    align-items: center;
+                    h5{
+                        width: 300px;
+                        text-align: left;
+                        font-size: 20px;
+                        margin-bottom: 0;
+                    }
+                    span{
+                        font-size: 20px;
+                        text-align: left !important;
+                        color: #999;
+                    }
+                    .password   {
+                        display: flex;
+                        gap: 10px;
+                        align-items: center;
+                        span{
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 100%;
+                            background-color: #999;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+        .blue_btn{
+            margin-top: 100px;
+        }
+    }
+}

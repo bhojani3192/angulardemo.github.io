@@ -1,0 +1,159 @@
+/* You can add global styles to this file, and also import other style files */
+@use '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@use '../src/variables.css' as c;
+@use './assets/css/font.css';
+@use './mixin.scss';
+body {
+  font-size: 16px;
+  color: #304B5A;
+}
+
+.owl-nav {
+  position: absolute;
+  top: -70px;
+  right: 115px;
+}
+
+.owl-nav .owl-prev, .owl-nav .owl-next {
+  width: 100%;
+  position: relative;
+}
+
+.owl-nav .owl-prev::after, .owl-nav .owl-next::after {
+  background-image: url("../src/assets/images/left.svg");
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  content: '';
+  position: absolute;
+  top: 0;
+}
+
+.owl-nav .owl-next::after {
+  left: 60px;
+  background-image: url("../src/assets/images/right.svg");
+}
+
+.owl-nav span {
+  font-size: 0px;
+}
+
+.section_gap {
+  margin: 100px;
+}
+
+.page_padding {
+  padding: 50px 0;
+}
+
+.main_heading {
+  color: #091637;
+  font-size: 48px;
+  font-family: "Quicksand";
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.blue_btn {
+  padding: 12px 48px;
+  color: #fff;
+  background-color: #091637;
+  border-radius: 50px;
+  font-family: "Quicksand";
+  font-weight: 500;
+  width: 200px;
+  font-size: 20px;
+  border: 2px solid #091637;
+  text-transform: uppercase;
+}
+
+.blue_btn:hover {
+  background-color: transparent;
+  color: #091637;
+  border: 2px solid #091637;
+}
+
+.blue_btn:hover:focus {
+  background-color: transparent;
+}
+
+.mat-button-toggle-label-content {
+  line-height: 36px !important;
+  padding: 0 !important;
+}
+
+.mat-checkbox-layout {
+  gap: 5px;
+}
+
+.mat-checkbox-checked .mat-checkbox-background {
+  background-color: #091637 !important;
+}
+
+.mat-checkbox-input {
+  width: 100%;
+  height: 100%;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color: #091637 !important;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple, .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  background-color: #091637 !important;
+}
+
+.custom_form_field .mat-form-field-flex {
+  border: 1px solid #304b5a;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+.custom_form_field .mat-form-field-label {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.custom_form_field .mat-form-field-underline {
+  display: none;
+}
+
+.message_success {
+  color: #054F19;
+  margin-top: 50px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #054F19;
+  border-radius: 100px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+.contact .contact_number .mat-form-field-flex {
+  max-width: 180px;
+}
+
+.booking_option {
+  padding: 50px 30px;
+  background-color: #EDF5FF;
+  border-radius: 10px;
+}
+
+.ng-invalid .blue_btn, .payment_option .blue_btn {
+  background-color: #091637;
+  border: #091637;
+}
+
+.error_msg, .invalid_form {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #f44336;
+  margin-top: 10px;
+}
+
+.invalid_form {
+  text-align: center;
+  margin-top: 20px;
+}
+/*# sourceMappingURL=styles.css.map */

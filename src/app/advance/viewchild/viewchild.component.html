@@ -1,0 +1,105 @@
+<div class="container">
+ <div class="row">
+    <div class="col-6">
+        <div class="view-child">
+            <p>viewchild works!</p>
+            <input type="checkbox" id="showcounter" name="showcounter" [(ngModel)]="showCounter">
+            <input type="text" [(ngModel)]="name" #nameInput>
+            
+            <ng-container *ngIf="showCounter">
+                <p>current count is {{childview?.count}}</p>
+                <button (click)="increment()">increment</button>
+                <button (click)="decrement()">decrement</button>
+                 <app-childview #childview></app-childview>
+                
+                 <p #para>some Text</p>
+    
+            </ng-container>
+    
+            <ng-template #sayHeyTemplate>
+                <p>say hello</p>
+            </ng-template>
+        </div>
+        <div class="renderer2">
+            <h2>selected Root</h2>
+            <div class="outer-div" style="border: 1px solid black; padding :5px;">
+                <div class="div1"  style="border: 1px solid black; margin :5px;">This is Div1</div>
+                <div class="div2"  style="border: 1px solid black; margin :5px;">This is Div2 </div>
+                <div class="div3"  style="border: 1px solid black; margin :5px;">This is Div3<br></div></div>
+        </div>
+
+        <div class="button">
+            <button (click)="exampleDiv()">exampleDiv</button>
+            <button (click)="exampleDiv2()">exampleDiv2</button>
+            <button (click)="exampleDiv3()">exampleDiv3</button>
+        </div>
+        <h2>listen event</h2>
+        <button #hellobtn>hello</button>
+        <p>click Count {{count}}</p>
+    </div>
+
+  
+    <div class="col-6">
+        <app-viewchildren></app-viewchildren>
+
+       <div class="py-5">
+
+        <div #hello class="mb-3">hey</div>
+
+        <button (click)="setStyle()" > Add style</button>
+        <button (click)="removeStyle()">remove Style</button>
+        <button (click)="addClass()">Add Class</button>
+        <button (click)="removeClass()">Remove Class</button>
+        <button (click)="setProperty()">set property</button>
+
+         <h2 class="my-2">Add/Remove Attribute</h2>
+         <input type="text" #inputElement>
+
+        <button  (click)="addAtribute()">Add Atr</button>
+        <button  (click)="removeAtribute()">remove Atr</button>
+
+        <h2>Create Text</h2>
+        <div #divCreateText></div>
+        <button (click)=" createText()">Create Text</button>
+
+        <h2>Renderer2 Create Element</h2>
+
+        <div #divNew style="border:1px solid #000">
+
+        </div>
+
+        <button (click)="CreateElemt()">create div</button>
+        <button (click)="CreateElmt2()">create div2</button>
+
+       </div>
+
+       <h2>Angular Renderer2 InsertBefore Example</h2>
+        <div #div1>
+            This is div1
+        </div>
+        <div #div2>
+            This is div 2
+        </div>
+        <div #div3>
+            This is div 3
+        </div>
+
+
+        <button (click)=" insertBeforeDiv1()">Click</button>
+        <button (click)=" isertBeforeDiv2()">Click2</button>
+        <button (click)=" isertBeforeDiv3()">Click3</button>
+        <button (click)=" crtComment()">crtComment</button>
+
+        <div #comment></div>
+
+
+
+
+
+
+
+
+
+    </div>
+ </div>
+</div>

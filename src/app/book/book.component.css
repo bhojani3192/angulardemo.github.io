@@ -1,0 +1,323 @@
+.booking_page {
+  margin: 20px 0;
+}
+
+.booking_option {
+  padding: 30px;
+  background-color: #EDF5FF;
+  margin: 30px;
+  border-radius: 10px;
+}
+
+.booking_option h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.booking_option .booking_option_field {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 2px solid #000;
+  padding: 10px 15px 10px 15px;
+  border-radius: 100px;
+}
+
+.booking_option .booking_option_field .radio_label {
+  font-size: 20px;
+  color: #091637;
+  font-family: "Quicksand";
+  font-weight: 600;
+}
+
+.booking_option .booking_option_field h4 {
+  margin-bottom: 0;
+  color: #091637;
+  font-family: "Holtwood One SC";
+  font-size: 20px;
+}
+
+.people {
+  margin-top: 30px;
+  background-color: #E7F4FE;
+}
+
+.people .blue_btn {
+  padding: 5px 10px;
+  width: 100px;
+  font-size: 16px;
+}
+
+.people .counter {
+  margin-top: 30px;
+}
+
+.people .people_number {
+  gap: 15px;
+  margin-top: 20px;
+  border: 0;
+}
+
+.people .people_number .number_selct {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background-color: #AAC8D9;
+  color: #fff;
+}
+
+.people .people_number .active {
+  background-color: #091637;
+}
+
+.people .number_selct.mat-button-toggle-checked {
+  background-color: #091637 !important;
+}
+
+.payment .payment_option {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.payment .payment_option .blue_btn {
+  border: 2px solid #091637;
+}
+
+.payment .payment_option .blue_btn:hover {
+  background-color: transparent;
+  border: 2px solid #091637;
+}
+
+.payment .payment_option .promocode_msg {
+  margin-top: 10px;
+  color: green;
+  width: 82%;
+  text-align: left;
+}
+
+.payment .payment_option .checkbox-label {
+  white-space: pre-line;
+}
+
+.payment .payment_option .payment_check {
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.payment .payment_option .promocode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.payment .payment_option .promocode input {
+  width: 100%;
+  display: unset !important;
+  margin-top: 15px;
+  padding: 10px 15px;
+}
+
+.payment .payment_option .promocode .apply_link {
+  text-decoration: none;
+  color: #0D3B54;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 25px;
+  background-color: transparent;
+  border: 0;
+}
+
+.payment .payment_option .promocode .clear {
+  right: 70px;
+}
+
+.payment .payment_option .price_total {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  margin-top: 30px;
+}
+
+.payment .payment_option .price {
+  margin-left: auto;
+  text-align: right;
+}
+
+.payment .payment_option .price .price_disc {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.payment .payment_option .price .final_price {
+  margin-top: 10px;
+}
+
+.payment .payment_option .price .discount {
+  color: #034B0A;
+  font-family: "Quicksand";
+  font-weight: 500;
+}
+
+.payment .payment_option .price span {
+  text-align: right;
+  color: #C2C2C2;
+  font-size: 16px;
+  font-family: "Holtwood One SC";
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.payment .payment_option .price .totalamt {
+  margin-top: 30px;
+  display: block;
+  position: relative;
+}
+
+.payment .payment_option .price .totalamt::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #D9D9D9;
+  bottom: 35px;
+  left: 0;
+}
+
+.payment .payment_option .price .disct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.payment .payment_option .price .disct span {
+  margin: 0 !important;
+}
+
+.payment .payment_option .blue_btn {
+  -webkit-transform: translateX(60%);
+          transform: translateX(60%);
+}
+
+.date_time {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.date_time .time {
+  background-color: #fff;
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  border-radius: 10px;
+  padding: 12px 0;
+}
+
+.date_time .time input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+.date_time .time h5 {
+  text-align: center;
+}
+
+.date_time .time input {
+  border-radius: 100px;
+  background-color: #0D3B54;
+  color: #fff;
+  padding: 8px 20px;
+}
+
+.booking_shedual {
+  min-height: 485px;
+}
+
+.booking_location {
+  margin: 30px;
+}
+
+.booking_location .heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.booking_location .heading a {
+  color: #091637;
+  text-decoration: none;
+  margin-left: 10px;
+  font-weight: 700;
+}
+
+.booking_location .heading p {
+  margin-bottom: 0;
+}
+
+.booking_location h3 {
+  font-family: "Quicksand";
+  font-size: 42px;
+  font-weight: 600;
+  color: #091637;
+}
+
+.booking_location .booking_option {
+  margin: 0;
+}
+
+.clear {
+  background: transparent !important;
+  border: 0;
+}
+
+.primary {
+  color: red;
+}
+
+.tooltip {
+  border-bottom: 1px dotted black;
+  position: absolute;
+  top: unset !important;
+  bottom: 0px !important;
+  right: 0 !important;
+  width: 100px;
+  opacity: 1;
+}
+/*# sourceMappingURL=book.component.css.map */

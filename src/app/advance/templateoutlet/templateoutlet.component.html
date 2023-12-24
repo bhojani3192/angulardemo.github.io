@@ -1,0 +1,106 @@
+<p>templateoutlet works!</p>
+<ng-template #template1>
+    <p>This Text will on *templat-outlet</p>
+</ng-template>
+
+<div class="d-flex gap-3">
+    <div>
+        
+<p>Template</p>
+<ng-container *ngTemplateOutlet="template1">
+This text is not displayed
+</ng-container>
+
+<!-- <ng-template *ngTemplateOutlet="template1">
+    This text is not displayed
+</ng-template> -->
+
+<div *ngTemplateOutlet="template1">
+
+</div>
+
+
+<h5>Value</h5>
+
+<ng-template let-value="value" #messageTemplate>
+    <p>Value Reciveed from the Parent is {{value}}</p>
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="messageTemplate" [ngTemplateOutletContext]="{value:1000}">
+</ng-container>
+
+<ng-container *ngTemplateOutlet="messageTemplate; context:{value:100}"></ng-container>
+
+
+<h5>More value</h5>
+
+<ng-template let-name="nameVar" let-message="messageVar" #template3>
+    <p>Dear {{name}} , {{message}}</p>
+</ng-template> 
+
+<ng-container [ngTemplateOutlet]="template3" [ngTemplateOutletContext]="{nameVar:'Virat',messageVar:'welcome'}">
+</ng-container>
+
+<h5>Object</h5>
+<ng-template let-person="person" #template4>
+    <p>Dear {{person.name}}, {{person.message}}</p>
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="template4" [ngTemplateOutletContext]="{person:{name:'Rohit', message:'Welcome'}}">
+</ng-container>
+
+<h5> $implicit</h5>
+<ng-template let-name let-message="message" #template5>
+    Dear {{name}} , {{message}}
+</ng-template>
+
+<ng-container [ngTemplateOutlet]="template5" [ngTemplateOutletContext]="{$implicit: 'Guest' , message:'Welcome to our site'}">
+
+</ng-container> 
+    </div>
+
+    <div class="example">
+
+        <ng-template #parentTemplate>
+            <p>This Template is defined in Parent. 
+                We will send it to child component</p>
+                <ng-content></ng-content>
+        </ng-template>
+
+        <app-outletchild [customTemplate]="parentTemplate"></app-outletchild>
+
+        <label for="mode">Display Mode:</label>
+        <select name="" id="" [(ngModel)]="mode">
+           <option   *ngFor="let item of modeOptions" [ngValue]="item.mode">{{item.mode}}</option>
+        </select>
+      
+        <ng-template let-items #cardTemplate>
+            <div *ngFor="let item of items" class="card p-2 m-2">
+                <h1> {{item.header}}</h1>
+                <p> {{item.content}}</p>
+            </div>
+        </ng-template>
+
+
+        <ng-template let items #listTemplate>
+            <ul class="listcls">
+                <li *ngFor="let item of items">
+                    <strong>{{item.header}}</strong> {{item.content}}
+                </li>
+            </ul>
+        </ng-template>
+
+      
+     
+
+   
+
+        <p>child</p>
+        <app-outletchild [itemTemplate]="template" [items]="items"></app-outletchild>
+
+    </div>
+
+
+
+</div>
+

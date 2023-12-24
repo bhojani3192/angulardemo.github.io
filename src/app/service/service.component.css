@@ -1,0 +1,13 @@
+.service_page .row {
+  gap: 24px 0;
+}
+
+.main_heading {
+  color: #091637;
+  font-size: 48px;
+  font-family: "Quicksand";
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+}
+/*# sourceMappingURL=service.component.css.map */

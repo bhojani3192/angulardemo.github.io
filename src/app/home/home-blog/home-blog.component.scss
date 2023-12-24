@@ -1,0 +1,13 @@
+.about_blog {
+    position: relative;
+    &::after{
+        content: '';
+        position: absolute;
+        background-image: url("../../../assets/images/home_blog.png");
+        width:500px;
+        height:500px;
+        bottom: -100px;
+        right:-100px;
+        background-repeat: no-repeat;
+    }
+}

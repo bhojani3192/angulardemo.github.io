@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="">
+    <p>lifecycle works!</p>
+    <input type="text" name="message" [(ngModel)]="message" autocomplete="off"  />
+    
+    <input type="text" name="contact" [(ngModel)] = "content" autocomplete="on" />
+    
+    <p>lifecycle works!</p>
+    hide child :
+    <input type="checkbox" [(ngModel)] = "hideChild">
+    
+    
+    <app-child [message]="message" *ngIf="!hideChild">
+        <p>{{content}}</p>
+    </app-child>
+    
+    
+    <div>
+        <button (click)="toggle()">Hide/Show lifechild</button>
+    </div>
+    
+    <app-lifechild *ngIf="displayChild"></app-lifechild>
+    
+    <h3>{{title}}</h3>
+    <p>Message: <input type="text" [(ngModel)] ='message'></p>
+    <p>code: <input type="text" [(ngModel)]='code'></p>`
+    <p>Name: <input type="text" [(ngModel)] ='customer.name'></p>
+    <p><button (click)="updateCustomer()">Update Customer Data</button></p>
+    
+      <app-lifechild [message]=message [customer]=customer></app-lifechild>
+    
+  </div>
+
+</div>

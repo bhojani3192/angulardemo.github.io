@@ -1,0 +1,21 @@
+<h1>Customvalidation !</h1>
+<form action="" [formGroup]="demoForm" (ngSubmit)="onSubmit()" novalidate>
+    <div>
+        <label for="numVal">Number:</label>
+        <input type="text" name="numVal" id="numVal" formControlName="numVal">
+       
+    </div>
+    <div *ngIf="!numVal?.valid && (numVal?.dirty || numVal?.touched) ">
+        <!-- The number should be greater than  10 -->
+        <div *ngIf="numVal?.errors?.['gte']">
+            The number should be greater than  10
+           
+        </div>
+    </div>
+
+    <p>Is Formvalid : {{demoForm.valid}}</p>
+    
+    <p>
+        <button type="submit" [disabled]="!demoForm.valid">Click</button>
+    </p>
+</form>

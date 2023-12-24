@@ -1,0 +1,59 @@
+<div class="payment custom_form_field">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="../../assets/images/payment.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-lg-6">
+                <div class="booking_option">
+                    <h3 class="main_heading">Payment</h3>
+                    <form class="payment-form" [formGroup]="paymentForm" (ngSubmit)="onSubmit()">
+                        <mat-form-field class="payment_field">
+                            <input matInput placeholder="Name On Card" value="" formControlName="cardname">
+                        </mat-form-field>
+                        <div *ngIf="!paymentForm.controls.cardname?.valid && (paymentForm.controls.cardname?.dirty||paymentForm.controls.cardname?.touched)" class="error_msg">
+                            Please Enter valid Card holder Name
+                        </div>
+                        <mat-form-field class="payment_field">
+                            <input matInput placeholder="Card Number" value="" formControlName="cardnumber">
+                        </mat-form-field>
+                        <div *ngIf="!paymentForm.controls.cardnumber?.valid && (paymentForm.controls.cardnumber?.dirty||paymentForm.controls.cardnumber?.touched)"
+                            class="error_msg">
+                            Please Enter valid Card Number
+                        </div>
+                        <div class="half_field">
+                            <div class="form_field">
+                                <mat-form-field class="payment_field">
+                                    <input matInput placeholder="Cvv" value="" formControlName="cvv">
+                                </mat-form-field>
+                                <div *ngIf="!paymentForm.controls.cvv?.valid && (paymentForm.controls.cvv?.dirty||paymentForm.controls.cvv?.touched)"
+                                    class="error_msg">
+                                    Please Enter valid cvv
+                                </div>
+                            </div>
+                           <div class="form_field">
+                            <mat-form-field class="payment_field expiry">
+                                <input matInput placeholder="mm/yy" value="" type="month" formControlName="expiry" >
+                            </mat-form-field>
+                            <div *ngIf="!expiry?.valid && (expiry?.dirty || expiry?.touched)" class="error_msg">
+                                Year should be Greater than 2023
+                            </div>
+                           </div>
+                        </div>
+                      
+                        <button type="submit" [disabled]="!paymentForm.valid" (click)="getpymtmsgs()"
+                            class="btn btn-primary blue_btn">Pay</button>
+                        <div *ngFor="let pymtmsg of pymtmsgs" class="message_success">
+                            <p>{{pymtmsg.successmsg }}</p>
+                        </div>
+                        
+                        <!-- <div
+                        *ngIf="!paymentForm.valid" class="invalid_form">
+                          Form is invalid!!
+                      </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

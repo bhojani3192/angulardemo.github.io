@@ -1,0 +1,59 @@
+
+<div class="row p-5">
+    <ul class="d-flex gap-5">
+        <li><a routerLink="../event">event</a></li>
+        <li><a routerLink="../viewchild">viewchild</a></li>
+        <li><a routerLink="../contentchild">contentchild</a></li>
+    </ul>
+    
+</div>
+<div class="row px-3">
+<div class="col-md-3">
+<div class="d-flex">
+    <div class="advance-main">
+        <p>ng content btn!</p>
+    <app-btn>click Me</app-btn>
+    <app-btn (click)="btnClicked($event)">submit</app-btn>
+    
+    <app-card>
+        <header>
+            <h1>Angular</h1>
+        </header>
+        <content>Onew Framwork Mobile & Desktop</content>
+        <footer>Super-power by Google</footer>
+    </app-card>
+    <app-card>
+        <header>
+            <h1>React</h1>
+        </header>
+        <content>A JavaScript library for building user interfaces</content>
+        <footer>Facebook Open Source</footer>
+    </app-card>
+    </div>
+    
+
+</div>
+
+<app-decoretor></app-decoretor>
+
+
+</div>
+    <div class="col-md-9">
+        <div class="d-flex gap-3">
+            <div>
+                <app-template-var></app-template-var>
+                <h2>appHighLight Directive</h2>
+                <p appHighLight>
+                    this text has blue border
+                </p>
+                 <app-host></app-host>
+            </div>
+            <app-templateoutlet></app-templateoutlet>            
+        </div>
+
+        <div class="d-flex column-gap-3">
+            <app-ngcontainer></app-ngcontainer>
+            <app-ngtemplate></app-ngtemplate>
+        </div>
+    </div>
+</div>

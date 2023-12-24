@@ -1,0 +1,30 @@
+.blog .user-detail {
+  margin-top: 30px;
+}
+
+.blog .user-detail ul {
+  list-style: none;
+  padding: 0;
+}
+
+.blog .user-detail ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+
+.blog .user-detail ul li .head {
+  font-weight: 600;
+  width: 100px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.blog .blog_detial {
+  padding-left: 50px;
+}
+/*# sourceMappingURL=blog.component.css.map */

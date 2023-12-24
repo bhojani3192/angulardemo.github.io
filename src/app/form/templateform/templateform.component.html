@@ -1,0 +1,128 @@
+
+   <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>templateform!</h1>
+
+            <form action="" #contactForm="ngForm" (ngSubmit)="onSubmit()" >
+                <p>
+                    <label for="">First Name</label>
+                    <input type="text" required="true" name="firstname"  id="firstname" minlength="10"  [(ngModel)] ="contact.firstname" >   
+                </p>
+                <!-- <pre>{{fname.value}}</pre>
+                <pre>{{fname.valid}}</pre>
+                <pre>invalid  : {{fname.invalid}} </pre>
+                <pre>touched  : {{fname.touched}} </pre> -->
+                <p>
+                    <label for="">Last Name</label>
+                    <input type="text" name="lastname" id="lastname"  maxlength="15"  [(ngModel)] ="contact.lastname">
+                </p>
+                <p>
+                    <label for="">Email</label>
+                    <input type="email" name="email" id="email" [(ngModel)] ="contact.email">
+                </p>
+             
+                    <p>
+                        <label for="gender">Geneder</label>
+                        <input type="radio" value="male" id="gender" name="gender" [(ngModel)] ="contact.gender"> Male
+                        <input type="radio" value="female" id="gender" name="gender"[(ngModel)] ="contact.gender" >Female
+                    </p>
+                    
+                    <p>
+                        <label for="isMarried">Married</label>
+                        <input type="checkbox" id="isMarried" name="isMarried"  [(ngModel)] ="contact.isMarried">
+                    </p>
+        
+                    <p>
+                        <label for="country"></label>
+                        <select name="country" id="country"  [(ngModel)] ="contact.country">
+                            <option value=""></option>
+                            <option [ngValue]="c.id" *ngFor="let c of countryList" >
+                                {{c.name}}
+                            </option>
+                        </select>
+        
+                    </p>
+        
+                    <div ngModelGroup="address" >
+                        <p>
+                            <label for="">city</label>
+                            <input type="text" name="city" id="" [(ngModel)] ="contact.address.city">
+                        </p>
+                        <p>
+                            <label for="">Street</label>
+                            <input type="text" name="street" id=""  [(ngModel)] ="contact.address.street">
+                        </p>
+                        <p>
+                            <label for="">Pincode</label>
+                            <input type="text" name="pincode" id="" [(ngModel)] ="contact.address.pincode">
+                        </p>
+        
+                    </div>
+        
+                    <p>
+                        <button type="submit">Submit</button>
+                    </p>
+                    <p>
+                        <button type="button" (click)="setDefaults()">default</button>
+                    </p>
+        
+                    <p>
+                        <button type="button" (click)="setValue()">setvalue</button>
+                        <button type="button" (click)="setAddress()">setAddress</button>
+                        <button type="button" (click)="changeCountry()">change country</button>
+                    </p>
+        
+                    <p>
+                        <!-- <button type="button" (click)=" patchValue()">patch value</button> -->
+                        <button type="button" (click)=" patchName()">Name</button>
+                        <button type="button" (click)="patchAddress()">change address</button>
+                        <button type="button" (click)="reset()">reset</button> 
+                        <button type="button" (click)="resetForm(contactForm)">reset form</button> 
+                    </p>
+
+                    <p>
+                        <button (click)="withoutOnlyself()">withoutself</button>
+                        <button (click)="withOnlyself()">withself</button>
+                        <button (click)="withoutEmit()">withoutEmit</button>
+                        <button (click)="emit()">Emit</button>
+                    </p>
+            </form>
+        
+            <pre>contact:{{contact | json}}</pre>
+            <!-- <pre>contactFormvalue:{{contactForm.value | json}}</pre> -->
+            <pre>valid:{{contactForm.valid}}</pre>
+            <pre>touched:{{contactForm.touched}}</pre>
+            <b>pristine</b> {{contactForm.pristine}} 
+            <pre>dirty:{{contactForm.dirty}}</pre>
+            <pre>submit:{{contactForm.submitted}}</pre>
+        </div>
+        <div class="col-md-6">
+            <form action="" #countryForm="ngForm" (ngSubmit)="countrySubmit()">
+                <p>
+                    <select name="country" id="" (ngModelChange)="onCountryChanged($event)">
+                        <option value="null" disabled >select Country</option>
+                        <option value="" *ngFor="let country of countries" [ngValue]="country.id">
+                            {{country.name}}
+                        </option>
+
+                    </select>
+                    <button type="submit">Submit</button>
+
+                </p>
+                <p>
+                    <input type="text" [(ngModel)]="country_name" [ngModelOptions]="{standalone: true}">
+                    <button (click)="addCountry()">add</button>
+                </p>
+
+                <p>
+                    <input type="text" [(ngModel)]="set_country" [ngModelOptions]="{standalone: true}">
+                    <button (click)="setCountry()">Set Country</button>
+                </p>
+            </form>
+
+            <app-tempcustomvalid></app-tempcustomvalid>
+        </div>
+    </div>
+   </div>
+

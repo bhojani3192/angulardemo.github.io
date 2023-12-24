@@ -1,0 +1,16 @@
+.banner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: url("../../../assets/images/banner_img.svg");
+  width: 800px;
+  height: 700px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.banner .btn {
+  margin-top: 24px;
+}
+/*# sourceMappingURL=banner.component.css.map */

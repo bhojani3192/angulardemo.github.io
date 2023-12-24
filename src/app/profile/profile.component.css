@@ -1,0 +1,74 @@
+.profile .booking_option {
+  margin: 50px auto;
+  max-width: 790px;
+  text-align: center;
+}
+
+.profile .booking_option h3 {
+  font-size: 42px;
+}
+
+.profile .booking_option .profile_name {
+  margin-top: 20px;
+}
+
+.profile .booking_option .profile-detial {
+  margin-top: 40px;
+}
+
+.profile .booking_option .profile-detial .last span {
+  color: #091637 !important;
+}
+
+.profile .booking_option .profile-detial ul {
+  padding: 0;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.profile .booking_option .profile-detial ul li {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile .booking_option .profile-detial ul li h5 {
+  width: 300px;
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.profile .booking_option .profile-detial ul li span {
+  font-size: 20px;
+  text-align: left !important;
+  color: #999;
+}
+
+.profile .booking_option .profile-detial ul li .password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile .booking_option .profile-detial ul li .password span {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #999;
+  display: block;
+}
+
+.profile .booking_option .blue_btn {
+  margin-top: 100px;
+}
+/*# sourceMappingURL=profile.component.css.map */

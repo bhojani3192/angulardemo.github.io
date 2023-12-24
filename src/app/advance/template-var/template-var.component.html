@@ -1,0 +1,29 @@
+<p>template-var works!</p>
+<p>
+    <label for="firstName">First Name</label>
+    <input (keyup)="0"  type="text" id="firstName" #firstName>
+</p>
+<p>
+    <label for="firstName">Last Name</label>
+    <input (keyup)="0"  type="text" id="lastName" #lastName>
+</p>
+
+<button (click)="SayHello(firstName,lastName,address)">say</button>
+
+ <b>Welcome {{firstName.value}} {{lastName.value}}</b>
+
+ <div *ngIf="false else addressTemplate"></div>
+ <ng-template #addressTemplate>
+    <p>
+        <label for="address">Address</label>
+        <input type="text" (keyup)="0" #address id="address">
+    </p>
+    <p> The Address of {{firstName.value}} {{lastName.value}} Entered {{address.value}}</p>
+ </ng-template>
+
+ <p>
+    You Entered {{address?.value}}
+ </p>
+
+
+ 

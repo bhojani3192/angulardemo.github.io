@@ -1,0 +1,113 @@
+.contact .contact_img img {
+  height: 100% !important;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+
+.contact .booking_option {
+  text-align: center;
+}
+
+.contact .booking_option .form_field_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 15px;
+}
+
+.contact .booking_option .form_field_row .contact_field {
+  width: 100%;
+}
+
+.contact .booking_option .form_field_row .contact_field .form_field {
+  width: 100%;
+}
+
+.contact .booking_option .form_field_row .contact_number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+.contact .booking_option .form_field_row .contact_number .country_code {
+  max-width: 60px;
+}
+
+.contact .booking_option .form_field_row .error_msg,
+.contact .booking_option .form_field_row .invalid_form {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #f44336;
+}
+
+.contact .booking_option .form_field_row .invalid_form {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact .booking_option .message_field {
+  width: 100%;
+}
+
+.contact .booking_option .message_success {
+  max-width: 285px;
+  margin: 40px auto 0 auto;
+}
+
+.contact .booking_option .ng-invalid .blue_btn {
+  background-color: #091637;
+  border: #091637;
+}
+
+.contact .contact_detail_wrap {
+  margin-top: 45px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contact .contact_detail_wrap ul {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.contact .contact_detail_wrap ul li {
+  text-align: left;
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.contact .contact_detail_wrap ul li:last-child {
+  margin-bottom: 0;
+}
+
+.contact .contact_detail_wrap ul li a {
+  color: #000;
+  text-decoration: none;
+  margin-left: 24px;
+}
+
+.contact .contact_detail_wrap ul li a:hover {
+  color: #091637;
+}
+
+.contact .contact_detail_wrap .social ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+}
+
+.contact .contact_detail_wrap .social ul li {
+  text-align: center;
+}
+
+.contact .contact_detail_wrap .social ul li a {
+  margin: 0;
+}
+/*# sourceMappingURL=contact.component.css.map */

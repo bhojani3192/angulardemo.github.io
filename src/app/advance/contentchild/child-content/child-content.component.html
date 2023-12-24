@@ -1,0 +1,29 @@
+<p>child-content works!</p>
+
+
+  
+    <header><h1 #header>React</h1></header>
+    <content>One framework. Mobile & desktop.</content>
+    <footer><b>Super-powered by Google </b></footer>
+
+
+
+    <header><h1 #header  style="color:red">React</h1></header>
+    <content>One framework. Mobile & desktop.</content>
+    <footer><b>Super-powered by Google </b></footer>
+
+
+    <header><h1 #header  style="color:red">Typescript</h1></header>
+    <content><a href="https://www.tektutorialshub.com/typescript-tutorial/"> Typescript</a> is a javascript for any scale</content>
+    <footer><i>Microsoft </i></footer>
+
+    <div style="border:1px solid #000;" class="m-2">
+        <h2>Child Component</h2>
+         message: <input type="text" [(ngModel)]="message">
+
+        <p>Injected Content Below</p>
+        <ng-content></ng-content>
+    
+    </div>
+
+

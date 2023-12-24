@@ -1,0 +1,51 @@
+$primarycolor:#091637;
+$white:#fff;
+$extralightblue:#EDF5FF;
+$font-quicksand:'Quicksand';
+$font-hotwood:'Holtwood One SC';
+$success-color:#054F19;
+
+.payment{
+    margin:50px 0;  
+    .row{
+        align-items: center;
+        .booking_option{
+            margin: 0  30px !important;
+            text-align: center;
+            h3{
+                font-size: 42px;
+            }
+          }
+          .payment_field{
+            width: 100%;
+          }
+          .half_field{
+            display: flex;
+            gap:20px;
+            margin-bottom: 0;
+            .form_field{
+              width: 100%;
+            }
+          }
+          .blue_btn{
+            margin-top: 30px;
+          }
+          .ng-invalid{
+            .blue_btn{
+                background-color: $primarycolor;
+                border: $primarycolor;
+            }
+          }
+          .error_msg, .invalid_form{
+            text-align: left;        
+            margin-bottom: 20px;
+            color: #f44336;
+        }
+        .invalid_form{
+          text-align: center;
+          margin-top: 20px;
+        }
+    }
+   
+}
+

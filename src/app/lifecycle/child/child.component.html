@@ -1,0 +1,9 @@
+<h3>child works!</h3>
+
+Message from parent via @input 
+<p>{{message}}</p>
+
+<input type="text" name="code" [(ngModel)] = "customer.code" />
+<input type="text" name="name" [(ngModel)] = "customer.name" />
+
+<app-grandchild [customer]="customer"></app-grandchild>

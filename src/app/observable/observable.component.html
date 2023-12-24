@@ -1,0 +1,27 @@
+<p>observable works!</p>
+<button #btn>Button</button>
+<label for="">Name</label>
+<input type="text" #name>
+<button (click)="multiplyby2()">multiply</button>
+<button (click)="toUppercase()">uppercase</button>
+<button (click)="MapToSingleProperty()">MapToSingleProperty</button>
+<a #httpbtn href="https://dog.ceo/api/breeds/list/all"></a>
+<button (click)="getDogsBread()" >getDogsBread</button>
+<button (click)="buttonClick2()" >buttonClick2</button>
+<button (click)="filterWithMap()" >filterWithMap</button>
+<button (click)="MultipleMap()" >MultipleMap</button>
+<p></p>
+
+
+<div class="col-md-3">
+    <h1>Observable Link</h1>
+ 
+    <ul>
+        <li>
+             <a [routerLink]="'../createobservable'">Create Observable</a>
+        </li>
+        <li>
+             <a [routerLink]="'../switchmap'">Switch Map</a>
+        </li>
+    </ul>
+  </div>

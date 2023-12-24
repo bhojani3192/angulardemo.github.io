@@ -1,0 +1,13 @@
+<p>contentchild works!</p>
+<div class="card">
+    <ng-content select="header"></ng-content>
+    <ng-content select="content"></ng-content>
+    <ng-content select="footer"></ng-content>
+</div>
+
+AfterConentInit, AfterContentChecked, AfterViewInit, AfterViewChecked
+<app-child-content>
+    <b>Injected</b> content from the <i>Parent</i>
+</app-child-content>
+
+message from child {{message}}

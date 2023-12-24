@@ -1,0 +1,15 @@
+<p>viewchildren works!</p>
+
+<input type="text" name="firstName" [(ngModel)]="firstName">
+<input type="text" name="middleName" [(ngModel)]="middleName">
+<input type="text" name="lastName" [(ngModel)]="lastName">
+
+<button (click)="show()">Show</button>
+
+
+<h2>view children 2</h2>
+<input *ngIf="showFirstName" type="checkbox" name="firstName" [(ngModel)]="firstName">
+<input *ngIf="showMiddleName"  type="checkbox" name="middleName" [(ngModel)]="middleName">
+<input *ngIf="showLastName" type="checkbox" name="lastName" [(ngModel)]="lastName">
+
+<button (click)="show()">Show</button>

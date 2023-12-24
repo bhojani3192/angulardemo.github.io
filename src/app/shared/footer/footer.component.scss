@@ -1,0 +1,15 @@
+$primarycolor:#091637;
+$white:#fff;
+$lightblue:#C8EBFF;
+
+
+.footer_wrap{
+    text-align: center;
+    background-color: $primarycolor;
+    color:$lightblue;
+    padding:26px 0;
+    font-size: 16px;
+    p{
+        margin-bottom: 0;
+    }
+}

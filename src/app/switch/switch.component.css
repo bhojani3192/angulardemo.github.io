@@ -1,0 +1,37 @@
+.checkbox_wrap {
+  margin: 50px 0;
+}
+
+.checkbox_wrap .checkbox {
+  text-align: left;
+  width: 20px;
+  margin-left: 20px;
+  height: 20px;
+}
+
+.primary {
+  color: red;
+}
+
+.toggle {
+  background-color: green;
+}
+
+.blue {
+  background-color: lightblue;
+}
+
+.go-green {
+  position: relative;
+}
+
+.tooltip {
+  border-bottom: 1px dotted black;
+  position: absolute;
+  top: 100% !important;
+  bottom: 0px !important;
+  left: 0 !important;
+  width: 100px;
+  opacity: 1;
+}
+/*# sourceMappingURL=switch.component.css.map */

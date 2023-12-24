@@ -1,0 +1,41 @@
+<div class="profile">
+    <div class="container">
+        <div class="row">
+            <div class="booking_option">
+                <h3 class="main_heading">Profile</h3>
+                <div class="profile_info">
+                    <img src="../../assets/images/profile.png" alt="" class="img-fluid">
+                    <div class="profile_name">
+                        <h5  [ngStyle]="{'font-size': '24px'}">Steven Smith</h5>
+                        <span [ngStyle]="{'font-size.em' :'1.2'}">Sydney, Australia</span>
+                    </div>
+                </div>
+
+                <div class="profile-detial">
+                    <ul *ngFor="let  Profiledetail of Profiledetails; let i = index; let o = odd; let e = even;  let last = last"  [ngClass]="{odd:o, even:e , last:last}">
+                            <li> 
+                                <h5 >{{Profiledetail.title}}</h5>
+                                <span [ngStyle]="{'color': color}">{{Profiledetail.titledata}}</span>
+                            </li>
+                            <!-- <li>
+                                <h5>Change Password</h5>        
+                                <div class="password">
+                                     <span></span>
+                                     <span></span>
+                                     <span></span>
+                                     <span></span>
+                                     <span></span>
+                                     <span></span>
+                                     <span></span>
+                                     <span></span>
+                                </div>
+                            </li> -->
+                    </ul>
+                </div>
+
+                <button type="submit"  class="btn btn-primary blue_btn" (click)="logOut()">Log Out</button>
+    
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+<p>ngtemplate works!</p>
+<h2>ng-template</h2>
+
+<ng-template #hiTemplate>
+   <p>TemplateOutlet Text</p>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="hiTemplate">
+    no text
+</ng-container>
+
+<!-- <label for="">
+    <input [(ngModel)]="selected" type="checkbox">select Me
+</label>
+
+<div *ngIf="selected">
+  <p>You are selected</p>
+</div> -->
+
+<h5>using ngTemplate with ngIf then & else</h5>
+
+<p>
+    show/hide
+    <input type="checkbox" [(ngModel)]="selected"> select
+</p>
+
+<ng-template [ngIf]="selected">
+    <p>You are selected</p>
+</ng-template>
+
+<div *ttIf="selected">
+    <p> tt if You are selected</p>
+</div>
+
+<ng-template [ttIf]="selected">
+    tt if You are selected ng-template
+</ng-template >
+
+<p>
+    show then
+    <input type="checkbox" [(ngModel)]="selectedThen"> select
+</p>
+
+
+<div *ngIf="selectedThen ; then thenBlock1 else elseBlock1" >
+    <p>content not showen</p>
+</div>
+
+<ng-template #thenBlock1>
+    <p>selcted content true</p>
+</ng-template>
+
+<ng-template #elseBlock1>
+    <p>selcted content false</p>
+</ng-template>
+
+
+
+<ng-template [ngIf]="selectedThen" [ngIfThen]="thenBlock2" [ngIfElse]="elseBlock2">
+content not showen
+</ng-template>
+
+
+<ng-template #thenBlock2>
+    <p>selcted content2 true</p>
+</ng-template>
+<ng-template #elseBlock2>
+    <p>selcted content2 false</p>
+</ng-template>
+
+<div class="d-flex">
+    <div>
+        <h2> Ng For </h2>
+        <ul>
+          <li *ngFor="let movie of movies let i= index; let even=even; trckBy:trackById">
+              {{movie.title}} - {{movie.director}}
+          </li>
+        </ul>
+
+        <ul>
+          <ng-template ngFor let-movie [ngForOf]="movies" 
+          let-i="index" 
+          let-even="even"
+          [ngForTrackBy]="trackById">
+          
+          <li>{{movie.title}}-{{movie.director}}</li>
+
+         </ng-template>
+        </ul>
+    
+      </div>
+
+      <div>
+          <input type="text" [(ngModel)]="num">
+          <div [ngSwitch]="num">
+              <div *ngSwitchCase="0">Zero</div>
+              <div *ngSwitchCase="1">one</div>
+              <div *ngSwitchCase="2">two</div>
+              <div *ngSwitchCase="3">three</div>
+              <div *ngSwitchCase="4">four</div>
+              <div *ngSwitchDefault>Default</div>
+          </div>
+          <div [ngSwitch]="num">
+              <ng-template [ngSwitchCase]="0">
+              <div>zero</div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="1">
+              <div>one</div>
+              </ng-template>
+              <ng-template [ngSwitchCase]="2">
+              <div>three</div>
+              </ng-template>
+              <ng-template [ngSwitchDefault]>
+              <div>Default</div>
+              </ng-template>
+          </div>
+
+
+      </div>
+
+</div>

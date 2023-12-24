@@ -1,0 +1,50 @@
+.login_page {
+  padding: 50px 0;
+  position: absolute;
+  z-index: 9999999;
+  top: 0;
+  background: #fff;
+  width: 100%;
+  left: 0;
+  height: 100%;
+}
+
+.login_page .row {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login_page .row .login_form {
+  max-width: 530px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login_page .row .login_form .main_heading {
+  font-size: 42px;
+}
+
+.login_page .row .login_form .form_field {
+  display: block;
+}
+
+.login_page .row .login_form .forgot_link {
+  display: block;
+  color: #091637;
+  text-decoration: none;
+  text-align: right;
+  margin: 0 auto 25px auto;
+}
+
+.login_page .row .login_form .signup_link {
+  margin-top: 70px;
+}
+
+.login_page .row .login_form .signup_link a {
+  color: #091637;
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 5px;
+}
+/*# sourceMappingURL=login.component.css.map */

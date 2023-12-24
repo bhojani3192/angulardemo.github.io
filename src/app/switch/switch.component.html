@@ -1,0 +1,247 @@
+<section>
+    <div class="container">
+        <div class="row py-10">
+
+<!-- 
+            <div class="main-wrap">
+              <ul>
+                <li class="d-flex">
+                  <h3>data</h3>
+                  <p>data</p>
+                </li>
+                <li class="d-flex">
+                  <h3>data</h3>
+                  <p>data</p>
+                </li>
+                <li class="d-flex">
+                  <h3>data</h3>
+                  <p>data</p>
+                </li>
+              </ul>
+            </div> -->
+            <ul class="d-flex gap-5">
+              <li><a [routerLink]="'../routing'">Routing</a></li>
+              <li><a [routerLink]="'../lifecycle'">Life cycle</a></li>
+              <li> <a [routerLink]="'../form'">form</a></li>
+              <li><a [routerLink]="'../angularservice'">service</a></li>
+              <li><a routerLink="../userlogin">userLogin</a></li>
+              <li> <a [routerLink]="'../http'">Http Client</a></li>
+              <li> <a [routerLink]="'../httppost'">Http Post</a></li>
+              <li><a  routerLink="../ngmodule">NG Module</a></li>
+              <li><a routerLink="../advance">Advance</a></li>
+              <li><a [routerLink]="'../observable'">Observable</a></li>
+        
+ 
+            </ul>
+           
+           <!-- <app-advance></app-advance> -->
+        
+            <div class="switch">
+              
+            <h1>Switch case</h1>
+
+            <input type="text"  [(ngModel)]= "num">
+             <div [ngSwitch]="num">
+                    <div *ngSwitchCase="0">Zero select</div>
+                    <div *ngSwitchCase="1">one select</div>
+                    <div *ngSwitchCase="2">two select</div>
+                    <div *ngSwitchCase="3">three select</div>
+                    <div *ngSwitchDefault>Default</div>
+              </div>
+                
+              <h1>ngif</h1>
+                <div class="checkbox_wrap">
+                Show <input type="checkbox" [(ngModel)]="showMe" class="checkbox">
+              </div>
+
+            
+            <p *ngIf="showMe">
+                checked
+            </p>
+         
+            <p *ngIf="!showMe">
+                unchecked
+            </p>
+
+        
+            <h1>ngifElse</h1>
+            <p *ngIf="showMe; else elseBlock1">
+                ShowMe is checked
+            </p>
+               
+              <ng-template #elseBlock1>
+                <p>ShowMe is unchecked Using elseBlock</p>
+              </ng-template>
+
+              <h1>ngIf then else</h1>
+ 
+              <p *ngIf="showMe; then thenBlock2 else elseBlock2">
+                 This is not rendered
+              </p>
+
+              <ng-template #thenBlock2>
+                <p>  ShowMe is checked Using thenblock</p>
+              </ng-template>
+
+              <ng-template #elseBlock2>
+                <p> ShowMe is unchecked Using elseBlock</p>
+              </ng-template>
+
+              <h1>using hidden </h1>
+              <p [hidden]="showMe">
+                content to render, when the condition is true  using hidden property binding
+             </p>
+            <p [hidden]="!showMe">
+                content to render, when the condition is false. using hidden property binding
+            </p>
+
+
+           <div class="d-flex gap-3 fs-2">
+            <p *ngFor="let value of numbers" [ngClass]="{primary: value <= 1 , secondary:value}" > {{value}}</p>
+
+           </div>
+
+            <p [ngStyle]="{'background-color':status === 'error' ? 'red' : 'blue' , 'color' : 'white' }">error</p>
+
+            <div class="d-flex">
+                <input [(ngModel)]="size" >
+                <input [(ngModel)]="color">
+            </div>
+            <div [ngStyle]="{'font-size.px':size , 'color': color}">size</div>
+
+            <h1 [ngStyle]="styleClass" >Heading</h1>
+
+            <button [ttClass]=" 'blue'">Click Me</button>
+
+           <h2>{{customdir}}</h2>
+
+             <p>Show Me
+            <input type="checkbox" [(ngModel)]="show">   
+
+             </p>
+            <div *ttIf="show">
+                Using the ttIf directive
+            </div>   
+            
+            <div *ngIf="show">
+                Using the ngIf directive
+            </div>
+
+
+        <button ttToggle>Go Green</button>
+
+
+        <div class="go-green">
+            <button class="my-3" ttToolTip toolTip="GO Green!">tip</button>
+        </div>
+
+        <h1>{{pipe}}</h1>
+
+        <p>Unformated date : {{toDate}}</p>
+        <p>formated date : {{toDate | date}}</p>
+        <p>formated date : {{toDate | date:'medium'}}</p>
+        <p>{{toDate | date | uppercase}}</p>
+        <p>{{toDate | date:'y'}}</p>
+        <p>Short: {{toDate | date:'short'}}</p>
+        <p>fullDate: {{toDate | date:'fullDate'}}</p>
+        <p>mediumDate: {{toDate | date:'mediumDate'}}</p>
+        <p>dd-mm-yy: {{toDate | date:'dd-MM-yy'}}</p>
+        <p>dd-mm-yy hh:mm: {{toDate | date:'dd-MM-yy HH:mm'}}</p>
+        
+        <h1>{{msg}}</h1>
+
+        <h1>{{msg | uppercase}}</h1>
+        <h1>{{msg | lowercase}}</h1>
+        
+        <h1>slice {{msg| slice:8:12}}</h1>
+
+        <span>Unformated {{numPipe}}</span>
+        <span>formated {{numPipe | number}}</span>
+        <span>formated {{numPipe | number:'3.1-2'}}</span>
+        <span>formated {{numPipe | number:'7.1-5'}}</span>
+        <span>formated {{per  }}</span>
+        <span>percent {{per | percent}}</span>
+        <span>percent {{per | percent:'1.2-2'}}</span>
+        <span>curency {{cur }}</span>
+        <span>curency  {{cur | currency}}</span>
+        <span>curency  {{cur | currency:'INR':true:'4.2-2'}}</span>
+        <span>curency  {{cur | currency:'AUD'}}</span>
+
+
+
+        <h3>{{custompipe}}</h3>
+
+        <h3>Fahrenheit to Celsius</h3>
+        <p>
+            Fahrenheit:
+            <input type="text" [(ngModel)]="Fahrenheit">
+
+            Celsius:{{Fahrenheit | tempConverter:'C'}}
+        </p>
+
+
+        <h3>Celsius to Fahrenheit</h3>
+
+      <p>
+        Celsius:
+        <input type="text" [(ngModel)]="celsius">
+
+        Fahrenheit:{{celsius | tempConverter:'F'}}
+
+      </p>
+      
+
+    
+
+
+      <p>{{obsValue | async }}</p>
+
+      <p *ttIf="(obsValue | async); else elseblock">
+        {{obsValue | async}}
+
+      </p>
+      <p #elseblock>
+        obsvalue loading
+      </p>
+
+      <ul>
+        <li *ngFor = "let item of obj | keyvalue">
+            {{item.key}} {{item.value}}
+        </li>
+      </ul>
+
+       
+<!-- <ul>
+    <li *ngFor="let item of breeds | keyvalue : orderClause ">
+      {{item.key}} {{item.value}}</li>
+  </ul> -->
+<!-- 
+      <ul>
+        <li *ngFor="let item of obj | keyvalue:orderbyValueAsc">
+          {{item.key}} {{item.value}}</li>
+      </ul> -->
+
+<!-- 
+      <div *ngIf="(obsValue | async); else elseBlock3">         
+        {{ obsValue | async}}                          
+      </div>
+
+
+      <p #elseBlock3>
+
+      </p> -->
+
+
+            </div>
+
+
+
+
+
+
+    </div>
+
+       
+
+    </div>
+</section>

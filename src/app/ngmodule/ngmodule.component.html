@@ -1,0 +1,31 @@
+<p>ngmodule works!</p>
+
+
+<h1>NG Module</h1>
+
+
+<app-newheader></app-newheader>
+<div class="ng-module my-3" >
+  <ul>
+    <li>
+      <a routerLink="/admin">Dashboard</a>
+    </li>
+  </ul>
+</div>
+<div class="ng-module my-3">
+  <h3>ng Module exmpl</h3>
+  <ul >
+    <li>
+      <a [routerLink]="['../newhome']">nehome</a>
+    </li>
+    <li>
+      <a [routerLink]="['../newabout']">about</a>
+    </li>
+    <li>
+      <a [routerLink]="['../newcontact']">contact</a>
+    </li>
+  </ul>
+</div>
+<app-admin></app-admin>
+<app-repo-list></app-repo-list>
+<app-newfooter></app-newfooter>

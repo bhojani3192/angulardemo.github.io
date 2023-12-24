@@ -1,0 +1,68 @@
+<nav class="navbar  header_bg navbar-expand-md bg-light bsb-navbar bsb-navbar-hover bsb-navbar-caret fixed-top">
+  <div class="container">
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+      </svg>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body align-items-center">
+        <ul class="navbar-nav justify-content-start flex-grow-1">
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['/']"   >Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" [routerLinkActive]="['active']"[routerLinkActiveOptions]="{exact: true}" [routerLink]="['about']" id="accountDropdown" role="button" aria-expanded="false">About</a>
+          
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" [routerLink]="['map']" [routerLinkActive]="['active']"   id="servicesDropdown" role="button" aria-expanded="false">Map</a>
+        
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['service']" [routerLinkActive]="['active']">Service</a>
+          </li>
+       
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['product']" [routerLinkActive]="['active']" [fragment]="fragment">Product</a>
+          </li>
+       
+        </ul>
+
+
+        <a class="navbar-brand" [routerLink]="['']">
+          <img src="../../assets/images/logo.svg" alt=""  height="44">
+        </a>
+
+
+        <ul class="navbar-nav justify-content-end flex-grow-1">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" [routerLink]="['book']" [routerLinkActive]="['active']">Book</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" [routerLink]="['blog']" [routerLinkActive]="['active']" id="accountDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['contact']" [routerLinkActive]="['active']">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['switch']">switch</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" [routerLink]="['login']">Login</a>
+          </li> -->
+    
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['profile']" [routerLinkActive]="['active']">
+              <img src="../../assets/images/person.svg" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

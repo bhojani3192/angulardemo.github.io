@@ -1,0 +1,148 @@
+<!-- booking -->
+<section class="booking_page">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-6">
+                    <div class="booking_option">
+                        <h5>Booking Option</h5>
+                        <div class="booking_option_field">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button class="radio_label" value="1">A Cruise excursion</mat-radio-button>
+                            </mat-radio-group>
+                            <div class="price">
+                                <h4>{{toorPrice| currency: 'USD':true:'3.0'}}</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" booking_option people">
+                        <!-- <h5>Number of People</h5>
+                        <mat-button-toggle-group name="ingredients" aria-label="Ingredients"  [multiple]="true" class="people_number">
+                          <mat-button-toggle value="1"  (click)="icrement()"   *ngFor="let num of numbers"  class="number_selct" [ngClass]="getClass(num)">{{num}}</mat-button-toggle>
+                        </mat-button-toggle-group>   -->
+
+                     
+
+                        <div class="counter">
+                            <h5 [ngClass]="flag ? 'primary' : 'secondary' ">Number of People</h5>
+                             <p>count: {{count}}</p> 
+                        <button [ngClass]="cssClass" (click)="icrement()"  (click)="multiply()" >+</button>
+                        <button [ngClass]="cssClass" (click)="decrement()"  (click)="multiply()" >-</button>
+
+
+                        <!-- <app-bookchild  [count]="counter" (countChanged)="countChangedHandler($event)"></app-bookchild> -->
+
+                        
+                        </div>
+ 
+                    </div>
+
+                    <div class=" booking_option payment">
+                        <div class="payment_option">
+                            <h5>Summary</h5>
+                            <form action="" [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+                                <div class="promocode">
+                                    <input type="text"  name="value" [(ngModel)]="value"  class="booking_option_field" placeholder="promocode" formControlName="promocode" >   
+                                    <button  class="apply_link clear" (click)="clearValue()">Clear</button>
+                                    <button type="submit"  [disabled]="!bookingForm.valid" class="apply_link" (click)="getfinaldict()" (click)="getpromomsg()" >Apply</button>
+                                </div>
+                                <div *ngIf="!bookingForm.controls.promocode?.valid && (bookingForm.controls.promocode.dirty)"
+                              class="error_msg">
+                              Promocde should  be 7 character
+                              </div>
+                            </form>
+            <div class="price_total">
+                <h4> A Cruise excursion</h4>
+            <div class="price">
+                <span>{{totalToorprice| currency: 'USD':true:'3.0'}}</span>
+             
+            </div>                
+        </div>  
+        <div class="price">
+            <!-- <p>{{discountamt| currency: 'USD':true:'3.0'}}</p>
+            <p>{{totalamt| currency: 'USD':true:'3.0'}}</p> -->
+
+            <div class="d-flex">
+                <div *ngFor=" let promocode of promomsgs" class="promocode_msg">
+                    <p>{{promocode.promomsg}}</p>    
+                </div>
+
+                <div class="discount_amt">
+                    <div class="price_disc">
+                <span  *ngFor="let toordiscount of dollarsign">{{toordiscount.dollar}}</span>
+                       
+                    </div>
+                      <div  class="final_price">
+                        <span *ngFor=" let toordiscount of toordiscountmsgs let i=index; let o = odd; let e = even; let last=last;"  [ngClass]="{odd : o, even:e , last:last}"> {{toordiscount.toordiscountmsg}}</span>
+                      </div> 
+                </div>
+            </div>     
+        </div>
+
+        <section class="payment_check">
+            <mat-checkbox class="example-margin"  [(ngModel)]="showMe">
+                <div class="checkbox-label" >
+                     By checking the box, you agree to the of  Terms & conditions of the Clock Tower.
+                </div>
+            </mat-checkbox>
+            </section>
+    
+            <div *ngIf="showMe">      
+                <button type="button" class="btn btn-primary blue_btn" [disabled]="!isDisabled" [routerLink]="['../payment']">Pay</button>
+            </div>
+           
+        <div *ngIf="!showMe" >
+            <button type="button" class="btn btn-primary blue_btn" [disabled]="isDisabled" [routerLink]="['../payment']">Pay</button>
+        </div>
+     
+       
+        
+         
+    </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="booking_option booking_shedual">
+                        <h5>Select Slote</h5>
+                        <div class="date_time">
+                            <mat-form-field>
+                                <mat-label>Choose a date</mat-label>
+                                <input matInput [matDatepicker]="picker" >
+                                <mat-hint>MM/DD/YYYY</mat-hint>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+
+                              <div class="time">
+                                <h5>Time</h5>
+                                <input type="time">
+                              </div>
+                        </div>
+                    </div>
+                    <div class="booking_location">
+                        <div class="heading">
+                            <h3>Clock Tower</h3>
+                            <p>{{toDate}}</p>
+
+                            <div _ngcontent-dwu-c22="" class="location"><img _ngcontent-dwu-c22="" src="../../../assets/images/location-on.svg" alt=""><a _ngcontent-dwu-c22="" href="#0">France</a></div>   
+                        </div>
+                        <img src="../../assets/images/booking_location.jpg" ttToolTip toolTip="clock-img"  class="img-fluid">
+
+                     
+
+                        <!-- <app-bookchild [count]=counter (countChanged)="countChangedHandler($event)"></app-bookchild> -->
+
+                        <!-- <p>{{child.count}}</p> -->
+                        <!-- <button (click)="child.increment()">increment</button>
+                        <button (click)="child.decrement()">decrement</button> -->
+                      
+
+
+
+                    </div>
+
+
+                </div>
+        </div>
+    </div>
+</section>  

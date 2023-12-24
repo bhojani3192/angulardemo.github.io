@@ -1,0 +1,9 @@
+<p>customer-detail works!</p>
+<p>Customer No: {{customer.customerNo}}</p>
+<p>Name: <input type="text" [(ngModel)]="customer.name"> </p>
+<p>Address: <input type="text" [(ngModel)]="customer.address"></p>
+<p>City: <input type="text" [(ngModel)]="customer.city"></p>
+<p>State: <input type="text" [(ngModel)]="customer.state"></p>
+<p>Country: <input type="text" [(ngModel)]="customer.country"></p>
+
+<button (click)="update()">Update</button>

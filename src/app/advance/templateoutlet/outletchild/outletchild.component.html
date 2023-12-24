@@ -1,0 +1,4 @@
+<p>outletchild works!</p>
+<ng-container *ngTemplateOutlet="customTemplate"></ng-container>
+
+<ng-container [ngTemplateOutlet]="itemTemplate" [ngTemplateOutletContext]="{$implicit:items}"></ng-container>

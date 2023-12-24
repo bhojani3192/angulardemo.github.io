@@ -1,0 +1,17 @@
+<p>userlogin works!</p>
+<h3>Login Form</h3>
+<form action="" #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
+    <p>
+        user Name:
+        <input type="text" name="username" ngModel>
+    </p>
+    <p>
+        password:
+        <input type="password" name="password" ngModel>
+    </p>
+
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+</form>
